@@ -25,16 +25,18 @@ public class MoviesManagerTest {
         manager.addMovie("Film 1");
         manager.addMovie("Film 2");
         manager.addMovie("Film 3");
+        manager.addMovie("Film 4");
 
 
-        String[] expected = {"Film 1", "Film 2", "Film 3"};
-        String[] actual = manager.findAll();
+
+        String[] expected = {"Film 4", "Film 3", "Film 2"};
+        String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
 
-    public void testEndAboveLimit() {
+    public void testEndBelowLimit() {
 
         MovieManager manager = new MovieManager();
         manager.addMovie("Film 1");
